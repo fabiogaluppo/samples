@@ -42,10 +42,10 @@ auto simulated_annealing(const double initial_temperature,
 			else
 			{
 				//Inferior solution can be allowed to move from local optimal solution
-				//using probability of acceptance based on Boltzman's function
-				auto boltzmanFunction = std::exp(-dE / temperature);
+				//using probability of acceptance based on Boltzmann's function
+				auto boltzmannFunction = std::exp(-dE / temperature);
 				auto acceptanceProbability = rnd_probability();
-				if (boltzmanFunction > acceptanceProbability)
+				if (boltzmannFunction > acceptanceProbability)
 				{
 					update = true;
 				}
