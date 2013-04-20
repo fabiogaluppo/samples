@@ -1,0 +1,111 @@
+Microsoft (R) F# Interactive version 11.0.50727.1
+Copyright (c) Microsoft Corporation. All Rights Reserved.
+
+For help type #help;;
+
+> 
+
+module btree = begin
+  type Node<'a> =
+    {value: 'a;
+     left: Node<'a> option;
+     right: Node<'a> option;}
+  val isNull : node:Node<'a> option -> bool
+  val value : node:Node<'a> option -> 'a
+  val left : node:Node<'a> option -> Node<'a> option
+  val right : node:Node<'a> option -> Node<'a> option
+  val newNode :
+    value:'a * left:Node<'a> option * right:Node<'a> option -> Node<'a> option
+end
+
+> 
+
+module df_traversal = begin
+  val preOrder : node:btree.Node<'a> option * visit:('a -> unit) -> unit
+  val inOrder : node:btree.Node<'a> option * visit:('a -> unit) -> unit
+  val postOrder : node:btree.Node<'a> option * visit:('a -> unit) -> unit
+end
+
+> 
+
+val display :
+  title:Printf.TextWriterFormat<unit> * node:btree.Node<char> option *
+  traversalFun:(btree.Node<char> option * (char -> unit) -> unit) -> unit
+
+> 
+
+val c : btree.Node<char> option = Some {value = 'C';
+                                        left = null;
+                                        right = null;}
+val e : btree.Node<char> option = Some {value = 'E';
+                                        left = null;
+                                        right = null;}
+val h : btree.Node<char> option = Some {value = 'H';
+                                        left = null;
+                                        right = null;}
+val a : btree.Node<char> option = Some {value = 'A';
+                                        left = null;
+                                        right = null;}
+val d : btree.Node<char> option = Some {value = 'D';
+                                        left = Some {value = 'C';
+                                                     left = null;
+                                                     right = null;};
+                                        right = Some {value = 'E';
+                                                      left = null;
+                                                      right = null;};}
+val i : btree.Node<char> option = Some {value = 'I';
+                                        left = Some {value = 'H';
+                                                     left = null;
+                                                     right = null;};
+                                        right = null;}
+val b : btree.Node<char> option =
+  Some {value = 'B';
+        left = Some {value = 'A';
+                     left = null;
+                     right = null;};
+        right = Some {value = 'D';
+                      left = Some {value = 'C';
+                                   left = null;
+                                   right = null;};
+                      right = Some {value = 'E';
+                                    left = null;
+                                    right = null;};};}
+val g : btree.Node<char> option =
+  Some {value = 'G';
+        left = null;
+        right = Some {value = 'I';
+                      left = Some {value = 'H';
+                                   left = null;
+                                   right = null;};
+                      right = null;};}
+val f : btree.Node<char> option =
+  Some {value = 'F';
+        left = Some {value = 'B';
+                     left = Some {value = 'A';
+                                  left = null;
+                                  right = null;};
+                     right = Some {value = 'D';
+                                   left = Some {value = 'C';
+                                                left = null;
+                                                right = null;};
+                                   right = Some {value = 'E';
+                                                 left = null;
+                                                 right = null;};};};
+        right = Some {value = 'G';
+                      left = null;
+                      right = Some {value = 'I';
+                                    left = Some {value = 'H';
+                                                 left = null;
+                                                 right = null;};
+                                    right = null;};};}
+
+> 
+Pre-order  traversal sequence: F B A D C E G I H 
+val it : unit = ()
+> 
+In-order   traversal sequence: A B C D E F G H I 
+val it : unit = ()
+> 
+Post-order traversal sequence: A C E D B H I G F 
+val it : unit = ()
+> 

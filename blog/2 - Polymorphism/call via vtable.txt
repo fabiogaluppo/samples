@@ -1,0 +1,14 @@
+000000013F4E1079  lea         rax,[r2d]  
+000000013F4E107E  mov         qword ptr [converter],rax
+...
+000000013F4E1093  mov         rax,qword ptr [converter]  
+000000013F4E1098  mov         rax,qword ptr [rax] 
+...
+000000013F4E1093  mov         rax,qword ptr [converter]  
+000000013F4E1098  mov         rax,qword ptr [rax]  <= breakpoint
+
+RAX    = 0x000000013F4E68A0
+RCX    = 0x00000000002CFB38
+Memory = 0x000000013F4E68A0  14 10 4e 3f 01 00 00 00 ... = littleEndianOf(0x000000013f4e1014)
+ 
+XMM0 = 00000000000000000000000043B40000 =  resultado final
