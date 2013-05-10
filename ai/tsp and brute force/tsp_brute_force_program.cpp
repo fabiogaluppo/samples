@@ -78,11 +78,13 @@ struct tsp_class
 		}
 		while(std::next_permutation(a.begin(), a.end()));
 
-		std::cout << "optimal : ";
 		cities = minimum_tsp.cities;
+
+		//debug purpose
+		/*std::cout << "optimal : ";		
 		for(auto city : cities)
 			std::cout << "(" << city.first << ", " << city.second << ") : ";
-		std::cout << do_cycle_lenght() << std::endl;
+		std::cout << do_cycle_lenght() << std::endl;*/
 	}
 
 private:
