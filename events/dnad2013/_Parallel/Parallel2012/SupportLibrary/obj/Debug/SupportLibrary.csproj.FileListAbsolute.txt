@@ -1,0 +1,5 @@
+H:\_Parallel\Parallel2012\SupportLibrary\bin\Debug\SupportLibrary.dll
+H:\_Parallel\Parallel2012\SupportLibrary\bin\Debug\SupportLibrary.pdb
+H:\_Parallel\Parallel2012\SupportLibrary\obj\Debug\SupportLibrary.csprojResolveAssemblyReference.cache
+H:\_Parallel\Parallel2012\SupportLibrary\obj\Debug\SupportLibrary.dll
+H:\_Parallel\Parallel2012\SupportLibrary\obj\Debug\SupportLibrary.pdb

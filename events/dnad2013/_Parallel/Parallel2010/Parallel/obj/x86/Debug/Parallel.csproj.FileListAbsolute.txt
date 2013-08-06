@@ -1,0 +1,8 @@
+H:\_Parallel\Parallel2010\Parallel\bin\Debug\Parallel.exe.config
+H:\_Parallel\Parallel2010\Parallel\bin\Debug\Parallel.exe
+H:\_Parallel\Parallel2010\Parallel\bin\Debug\Parallel.pdb
+H:\_Parallel\Parallel2010\Parallel\bin\Debug\SupportLibrary.dll
+H:\_Parallel\Parallel2010\Parallel\bin\Debug\SupportLibrary.pdb
+H:\_Parallel\Parallel2010\Parallel\obj\x86\Debug\Parallel.csprojResolveAssemblyReference.cache
+H:\_Parallel\Parallel2010\Parallel\obj\x86\Debug\Parallel.exe
+H:\_Parallel\Parallel2010\Parallel\obj\x86\Debug\Parallel.pdb

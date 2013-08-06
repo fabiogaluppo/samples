@@ -1,0 +1,16 @@
+H:\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.exe.config
+H:\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.exe
+H:\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.pdb
+H:\_Parallel\Parallel2012\Parallel\bin\Debug\SupportLibrary.dll
+H:\_Parallel\Parallel2012\Parallel\bin\Debug\SupportLibrary.pdb
+H:\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.csprojResolveAssemblyReference.cache
+H:\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.exe
+H:\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.pdb
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.exe.config
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.exe
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.pdb
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.exe
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\bin\Debug\Parallel.pdb
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\bin\Debug\SupportLibrary.dll
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\bin\Debug\SupportLibrary.pdb
+C:\Users\Fabio Galuppo\Documents\GitHub\samples\events\dnad2013\_Parallel\Parallel2012\Parallel\obj\Debug\Parallel.csprojResolveAssemblyReference.cache

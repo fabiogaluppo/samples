@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39E8E7BB-66CB-44C3-A59E-4E9A3CA6A2AD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_Parallel</RootNamespace>
+    <AssemblyName>Parallel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\Parallel\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_AsyncRunLoop.cs">
+      <Link>_AsyncRunLoop.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_LimitParallelism.cs">
+      <Link>_LimitParallelism.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_Names.cs">
+      <Link>_Names.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_PublisherSubscriber.cs">
+      <Link>_PublisherSubscriber.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_StructuredParallelism.cs">
+      <Link>_StructuredParallelism.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_SynchronizationPrimitives.cs">
+      <Link>_SynchronizationPrimitives.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_Threads.cs">
+      <Link>_Threads.cs</Link>
+    </Compile>
+    <Compile Include="..\..\src\Parallel\_ValueHolder.cs">
+      <Link>_ValueHolder.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SupportLibrary\SupportLibrary.csproj">
+      <Project>{18FD9776-A8EA-4C68-957B-BBAB53D5E9C2}</Project>
+      <Name>SupportLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
