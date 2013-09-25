@@ -52,11 +52,12 @@ namespace _Parallel
     public sealed class AsyncRunLoop : IDisposable
     {
         private static readonly object END_MESSAGE = new object();
+ 
 
-        private System.Collections.Concurrent.ConcurrentDictionary<Type, Action<object>> D_ = 
+        private System.Collections.Concurrent.ConcurrentDictionary<Type, Action<object>> D_ =
             new System.Collections.Concurrent.ConcurrentDictionary<Type, Action<object>>();
 
-        private System.Collections.Concurrent.ConcurrentQueue<object> Q_ = 
+        private System.Collections.Concurrent.ConcurrentQueue<object> Q_ =
             new System.Collections.Concurrent.ConcurrentQueue<object>();
 
         ManualResetEventSlim Waiter_ = new ManualResetEventSlim(false);
@@ -67,10 +68,14 @@ namespace _Parallel
 
         Thread RunLoopThread_;
 
-        public AsyncRunLoop()
+        public static AsyncRunLoop CreateForeground(int waitTimeout = Timeout.Infinite) { return new AsyncRunLoop(false, waitTimeout); }
+
+        public static AsyncRunLoop CreateBackground(int waitTimeout = Timeout.Infinite) { return new AsyncRunLoop(true, waitTimeout); }
+
+        public AsyncRunLoop(bool isBackground = false, int waitTimeout = Timeout.Infinite)
         {
-            RunLoopThread_ = new Thread(Receiver) { IsBackground = false };
-            RunLoopThread_.Start();
+            RunLoopThread_ = new Thread(new ParameterizedThreadStart(Receiver)) { IsBackground = isBackground };
+            RunLoopThread_.Start(waitTimeout);
         }
 
         ~AsyncRunLoop()
@@ -96,10 +101,32 @@ namespace _Parallel
             PostEnd();
         }
 
-        private void Receiver()
+        private bool TryGetHandler(Type selector, out Action<object> handler)
         {
-            bool forever = true;
-            while (forever)
+            if (selector != typeof(object))
+            {
+                //check if actual type holds
+                if (D_.TryGetValue(selector, out handler))
+                    return true;
+
+                //check if any base type holds recursively                
+                if (TryGetHandler(selector.BaseType, out handler))
+                    return true;
+
+                //check if any interface implemented holds
+                foreach (var iface in selector.GetInterfaces())
+                    if (D_.TryGetValue(iface, out handler))
+                        return true;
+            }
+
+            handler = null;
+            return false;
+        }
+
+        private void Receiver(object state)
+        {
+            int waitTimeout = (int)state;
+            while (true)
             {
                 object context;
                 if (Q_.TryDequeue(out context))
@@ -108,8 +135,6 @@ namespace _Parallel
                     {
                         if (null != EndMessageArrived)
                             EndMessageArrived();
-
-                        forever = false;
 
                         Q_ = null;
                         D_ = null;
@@ -124,7 +149,8 @@ namespace _Parallel
                     }
 
                     Action<object> handler;
-                    if (D_.TryGetValue(context.GetType(), out handler))
+                    
+                    if (TryGetHandler(context.GetType(), out handler))
                     {
                         try
                         {
@@ -145,7 +171,7 @@ namespace _Parallel
                 else
                 {
                     Waiter_.Reset();
-                    Waiter_.Wait(5000);
+                    if (waitTimeout == Timeout.Infinite) Waiter_.Wait(); else Waiter_.Wait(waitTimeout);
                 }
             }
         }
@@ -163,15 +189,6 @@ namespace _Parallel
         public void PostEnd()
         {
             Post(END_MESSAGE);
-        }
-
-        public void Abort()
-        {
-            if (null != RunLoopThread_)
-            {
-                GC.SuppressFinalize(this);
-                RunLoopThread_.Abort();
-            }
         }
 
         public void Dispose()
