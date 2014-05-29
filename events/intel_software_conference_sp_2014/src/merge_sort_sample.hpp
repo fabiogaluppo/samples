@@ -73,8 +73,11 @@ void parallel_merge_sort(RandomAccessIterator first, RandomAccessIterator end)
 		std::thread t(f, it, it + stride);
 		threads.push_back(std::move(t));
 	}
-	std::thread t(f, it, end);
-	threads.push_back(std::move(t));
+	//std::thread t(f, it, end);
+	//threads.push_back(std::move(t));
+	//or
+	//reusing the 'main' or current thread
+	f(it, end);
 	for (auto& th : threads)
 		th.join();
 
