@@ -89,8 +89,8 @@ let test1 () =
     printfn "%s" (getSomeValue (Some "Hello"))
     printfn "%A" blue
     printfn "%A" yellow
-    printfn "%b" (isFileInDirectory file0 "c:\windows")
-    printfn "%b" (isFileInDirectory file0 "c:\windows\system32")
+    printfn "%b" (isFileInDirectory file0 @"c:\windows")
+    printfn "%b" (isFileInDirectory file0 @"c:\windows\system32")
     printfn "%d" (cardinality [1..10])
     printfn "%d" (cardinality [1])
     printfn "%d" (cardinality [1; 2])
