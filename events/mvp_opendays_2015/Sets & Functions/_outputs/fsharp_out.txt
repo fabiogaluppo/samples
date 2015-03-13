@@ -1,0 +1,78 @@
+Sets:
+set [1; 2; 4; 5; 7]
+set [1; 2; 4; 8; 9]
+set [1; 2; 4]
+set [1; 2; 4]
+true
+---------------
+CartesianProduct:
+[|('a', 1); ('a', 2); ('a', 3); ('b', 1); ('b', 2); ('b', 3); ('c', 1); ('c', 2)
+;
+  ('c', 3)|]
+[|(1, 'a'); (1, 'b'); (1, 'c'); (2, 'a'); (2, 'b'); (2, 'c'); (3, 'a'); (3, 'b')
+;
+  (3, 'c')|]
+---------------
+Relation:
+[|"Mark Twain"; "Lewis Carroll"; "Charles Dickens"; "Stephen King"|]
+[|"A Christmas Carol"; "Alice's Adventures in Wonderland";
+  "The Adventures of Tom Sawyer"; "The Left Hand of Darkness"|]
+map
+  [("Charles Dickens", "A Christmas Carol");
+   ("Lewis Carroll", "Alice's Adventures in Wonderland");
+   ("Mark Twain", "The Adventures of Tom Sawyer")]
+set
+  ["A Christmas Carol"; "Alice's Adventures in Wonderland";
+   "The Adventures of Tom Sawyer"]
+set ["Charles Dickens"; "Lewis Carroll"; "Mark Twain"]
+map
+  [("A Christmas Carol", "Charles Dickens");
+   ("Alice's Adventures in Wonderland", "Lewis Carroll");
+   ("The Adventures of Tom Sawyer", "Mark Twain")]
+---------------
+Functions:
+0y
+set [0uy; 2uy; 4uy; 6uy; 8uy; 10uy; 12uy; 14uy; 16uy; ...]
+seq [0uy; 1uy; 2uy; 3uy; ...]
+set [0uy; 1uy; 2uy; 3uy; 4uy]
+---------------
+MoreSets:
+set []
+set [("xyz", "xyz@xyz.com")]
+set [("abc", "abc@abc.com"); ("xyz", "xyz@xyz.com")]
+set
+  [("abc", "abc@abc.com"); ("hello", "hello@world.com"); ("xyz", "xyz@xyz.com")]
+
+set
+  [("abc", "abc@abc.com"); ("hello", "hello@world.com"); ("xyz", "xyz@xyz.com")]
+
+seq
+  [("xyz", "xyz@xyz.com"); ("abc", "abc@abc.com"); ("hello", "hello@world.com")]
+
+seq
+  [("xyz", "xyz@xyz.com"); ("ops", "ops@ops.com"); ("hello", "hello@world.com")]
+
+---------------
+Composition:
+3
+5
+4
+6
+Is function composition an associative binary operation? true
+---------------
+InverseFunctions:
+3.000000
+8.000000
+8.000000
+3.000000
+{A: "Hello World", B: 123, C: 456.789000}
+[|123uy; 0uy; 34uy; 0uy; 65uy; 0uy; 34uy; 0uy; 58uy; 0uy; 34uy; 0uy; 72uy; 0uy;
+  101uy; 0uy; 108uy; 0uy; 108uy; 0uy; 111uy; 0uy; 32uy; 0uy; 87uy; 0uy; 111uy;
+  0uy; 114uy; 0uy; 108uy; 0uy; 100uy; 0uy; 34uy; 0uy; 44uy; 0uy; 34uy; 0uy; 66uy
+;
+  0uy; 34uy; 0uy; 58uy; 0uy; 49uy; 0uy; 50uy; 0uy; 51uy; 0uy; 44uy; 0uy; 34uy;
+  0uy; 67uy; 0uy; 34uy; 0uy; 58uy; 0uy; 52uy; 0uy; 53uy; 0uy; 54uy; 0uy; 46uy;
+  0uy; 55uy; 0uy; 56uy; 0uy; 57uy; 0uy; 125uy; 0uy|]
+{A: "Hello World", B: 123, C: 456.789000}
+{A: "Hello World", B: 123, C: 456.789000}
+---------------
