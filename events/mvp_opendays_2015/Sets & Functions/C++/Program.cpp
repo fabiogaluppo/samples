@@ -249,8 +249,8 @@ static void InverseFunctions()
 	Msg msg1 = deserializeFromStream<Msg>(ss);
 	std::wcout << msg1.to_wstring() << L"\n";
 
-	std::function<Msg(std::stringstream)> g = [](std::stringstream& ss) { return deserializeFromStream<Msg>(ss); };
-	std::function<std::stringstream(Msg)> f = [](const Msg& msg) { return serializeToStream(msg); };
+	std::function<Msg(std::stringstream)> g = [](std::stringstream ss) { return deserializeFromStream<Msg>(ss); };
+	std::function<std::stringstream(Msg)> f = [](Msg msg) { return serializeToStream(msg); };
 	auto msg2 = compose(g, f)(msg0);
 	std::wcout << msg2.to_wstring() << L"\n";
 }
