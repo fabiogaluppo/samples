@@ -1,0 +1,5 @@
+clang++ -O0 -std=c++11 program.cpp -o tspsystem
+clang++ -O3 -std=c++11 program.cpp -o tspsystem
+
+cl /O0 /EHsc program.cpp /Fe:tspsystem
+cl /Ox /EHsc program.cpp /Fe:tspsystem

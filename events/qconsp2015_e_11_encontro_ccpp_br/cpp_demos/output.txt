@@ -1,0 +1,83 @@
+5000.000000 is the amount
+5325.000000 is the new amount after p1
+6.500000% is the interest rate in period 1
+10.000000% is the interest rate in period 2
+p1 == p2? false
+5857.500000 is the new amount after p2
+
+5000.000000 is the amount
+5857.500000 is the new amount after fp1 and fp2
+
+5000.000000 is the amount
+5857.500000 is the new amount after applying the composition of hofp1 and hofp2
+5857.500000 is the new amount after applying the std::bind to hofp1 and hofp2
+
+5000.000000 is the amount
+{6.500000%, 10.000000%, 7.000000%, 4.500000%}
+6549.563625 is the new amount after a sequence of periods
+6549.563625 is the new amount after a sequence of periods
+6549.563625 is the new amount after a sequence of periods
+6549.563625 is the new amount after a sequence of periods
+
+normal:
+0: **
+1: ****
+2: *********
+3: **************
+4: *******************
+5: *******************
+6: **************
+7: *********
+8: ****
+9: **
+
+geometric:
+0: ****************************************
+1: ***********************
+2: **************
+3: ********
+4: *****
+5: **
+6: **
+7: *
+8: 
+9: *
+
+uniform:
+0: *********
+1: *********
+2: *********
+3: **********
+4: **********
+5: *********
+6: **********
+7: **********
+8: *********
+9: **********
+
+binomial:
+0: 
+1: *
+2: *******
+3: ****************
+4: ************************
+5: ************************
+6: ****************
+7: *******
+8: *
+9: 
+
+poisson:
+0: **
+1: ********
+2: ****************
+3: *********************
+4: *******************
+5: **************
+6: ********
+7: ****
+8: **
+9: *
+
+{100, 200, 300, 400, 500, 600, 700, 800}
+
