@@ -1,0 +1,2 @@
+# build .netmodule
+/target:module MatGen.cs

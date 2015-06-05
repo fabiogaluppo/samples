@@ -1,0 +1,1 @@
+<%@ WebService Language="c#" Class="StringWebService, StringWS" %>

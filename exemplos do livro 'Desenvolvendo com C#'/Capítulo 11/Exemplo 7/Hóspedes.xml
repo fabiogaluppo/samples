@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+<Hóspedes>
+  <Hóspede ID="1" Nome="Fabio" Sobrenome="Galuppo" Email="fgaluppo@hotmail.com"/>
+  <Hóspede ID="2" Nome="Vanclei" Sobrenome="Matheus" Email="vanclei@dev.net"/>
+  <Hóspede ID="3" Nome="Wallace" Sobrenome="Santos" Email="wallace@dev.net"/>
+  <Hóspede ID="4" Nome="Fernando" Sobrenome="Galuppo" Email="fernando@dev.net"/>
+  <Hóspede ID="5" Nome="Fabio" Sobrenome="Santos" Email="fsantos@empresa.com"/>
+  <Hóspede ID="6" Nome="Wallace" Sobrenome="Matheus" Email="wm@msn.com"/>
+</Hóspedes>

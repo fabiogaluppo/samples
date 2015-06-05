@@ -1,0 +1,208 @@
+### Visual C# .NET Compiler Defect Report, created 12/06/02 22:56:55
+### Compiler version: 7.00.9466
+### .NET common language runtime version: 1.0.3705
+### Operating System: Windows NT 5.1.2600   
+### User Name: Fabio Galuppo
+### Compiler command line
+csc /r:Accessibility.dll /r:Microsoft.Vsa.dll /r:System.Configuration.Install.dll /r:System.Data.dll /r:System.Design.dll /r:System.DirectoryServices.dll /r:System.dll /r:System.Drawing.Design.dll /r:System.Drawing.dll /r:System.EnterpriseServices.dll /r:System.Management.dll /r:System.Messaging.dll /r:System.Runtime.Remoting.dll /r:System.Runtime.Serialization.Formatters.Soap.dll /r:System.Security.dll /r:System.ServiceProcess.dll /r:System.Web.dll /r:System.Web.RegularExpressions.dll /r:System.Web.Services.dll /r:System.Windows.Forms.Dll /r:System.XML.dll /recurse:*.cs /bugreport:bug.txt
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\AbstractSubscriber\Subscriber.cs'
+//Subscriber.cs
+
+public abstract class Subscriber
+{
+  public abstract void Receive(string msg);  
+}
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\BrowserSubscriber\BrowserSubscriber.cs'
+using System;
+using System.Text;
+using System.Threading;
+using System.Net.Sockets;
+
+public class BrowserSubscriber : Subscriber
+{
+  public override void Receive(string msg)
+  {
+    if(msg.Trim() != String.Empty) 
+      SendMessageToBrowser(msg);    
+  }
+
+  public void Browser()
+  {
+    System.Diagnostics.Process.Start("IExplore.exe", "http://localhost:1234");
+  }
+  
+  private string Data(string content)
+  {
+    string term = "\r\n";
+    string title = "<HEAD><TITLE>BrowserSubscriber</TITLE></HEAD>";
+    string fmt = "<HTML>{1}<BODY><H1>{0}</H1></BODY></HTML>";
+    string html = String.Format(fmt, content, title);
+    
+    StringBuilder resp = new StringBuilder(200);
+    resp.AppendFormat("HTTP/1.1 200 OK{0}", term);
+    resp.AppendFormat("Content-Type: text/html{0}", term);
+    resp.AppendFormat("Content-Length: {0}{1}", html.Length, term);
+    resp.AppendFormat("{0}{1}", term, html);
+
+    return resp.ToString();
+  }
+
+  private void SendMessageToBrowser(string msg)
+  {  
+    ThreadStart ts = new ThreadStart(Browser);
+    Thread t = new Thread(ts);  
+
+    int port = 1234;
+    TcpListener listener = new TcpListener(port);
+
+    listener.Start();
+
+    t.Start();
+    
+    TcpClient client = listener.AcceptTcpClient();
+     
+    NetworkStream ns = client.GetStream();
+
+    string data = Data(msg);     
+
+    Byte[] bytes = Encoding.ASCII.GetBytes(data);  
+    ns.Write(bytes, 0, bytes.Length);
+
+    client.Close();
+    listener.Stop();   
+  }
+}
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\ConsoleSubscriber\ConsoleSubscriber.cs'
+//ConsoleSubscriber.cs
+
+using System;
+
+public class ConsoleSubscriber : Subscriber
+{
+  public override void Receive(string msg)
+  {
+    if(msg.Trim() != String.Empty)
+      Console.WriteLine("--> {0} <--", msg);
+  }  
+}
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\FormSubscriber\FormSubscriber.cs'
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Threading;
+
+public class FormSubscriber : Subscriber
+{
+  Formul rio form;
+
+  public override void Receive(string msg)
+  {
+    if(msg.Trim() == String.Empty) 
+      form.Close();
+    else
+      form.DisplayMessage(msg);    
+  }
+
+  public void Initialize()
+  {
+    form = new Formul rio();
+    form.Text = "FormSubscriber";
+    form.ShowDialog();    
+  }
+
+  public FormSubscriber()
+  {
+    ThreadStart ts = new ThreadStart(this.Initialize);
+    Thread t = new Thread(ts);
+    t.Start();
+  }   
+} 
+
+public class Formul rio : Form
+{
+  private string message;
+
+  ListBox lb;
+  
+  public Formul rio()
+  {
+    lb = new ListBox();
+    lb.Anchor |= AnchorStyles.Right | AnchorStyles.Bottom;
+    lb.Top = 30; lb.Left = 10; 
+    lb.Width = ClientSize.Width - 20; lb.Height = ClientSize.Height - 40;
+    lb.Font = Font;
+
+    Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+   
+    Controls.Add(lb);
+  }  
+
+  public void DisplayMessage(string msg)
+  {
+    lock(this){ message = msg; }
+    
+    lb.Items.Insert(0, msg);    
+
+    Invalidate();
+  }     
+
+  protected override void OnPaint(PaintEventArgs pea)
+  {
+    Draw(pea.Graphics, 10, 10);
+  }
+
+  protected virtual void Draw(Graphics g, int x, int y)
+  { 
+    g.DrawString(message, Font, new SolidBrush(Color.Black), x, y);
+  }
+}
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\Publisher\Publisher.cs'
+//Publisher.cs
+
+public class Publisher
+{
+  public delegate void Broadcast(string msg); 
+}
+### Source file: 'C:\ProgCS\Cap¡tulo 15\Exemplo 8\App.cs'
+//csc /out:ConsoleSubscriber.exe /recurse:*.cs
+
+using System;
+
+public class App
+{
+  public static void Main()
+  {
+    Console.WriteLine("\nDigite a mensagem a ser publicada");
+    Console.WriteLine("Mensagem vazia e ENTER para sair");
+    Console.WriteLine("\nMensagem:");
+
+    string mensagem = null;
+
+    Subscriber c = new ConsoleSubscriber();
+    Subscriber f = new FormSubscriber();
+    Subscriber b = new BrowserSubscriber();
+
+    Publisher.Broadcast broadcast = new Publisher.Broadcast(c.Receive);
+    broadcast += new Publisher.Broadcast(f.Receive);
+    broadcast += new Publisher.Broadcast(b.Receive);    
+
+    do
+    {      
+      mensagem = Console.ReadLine();
+      
+      broadcast(mensagem);
+    
+    }while(mensagem.Trim() != String.Empty);
+  }
+}
+
+
+
+
+### User description
+Na persistˆncia do arquivo de bug report as acentua‡oes sao substituidas por 
+outros caracteres
+
+### User suggested correct behavior
+Os caracteres deveriam aparecer corretamente ;)
+

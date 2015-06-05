@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hóspede</name>
+    </assembly>
+    <members>
+        <member name="T:Hóspede">
+            <summary>
+            Representa o tipo Hóspede
+            </summary>
+        </member>
+        <member name="P:Hóspede.ID">
+            <summary>
+            Identificação do hóspede
+            </summary>
+        </member>
+        <member name="P:Hóspede.Nome">
+            <summary>
+            Nome do hóspede
+            </summary>
+        </member>
+        <member name="P:Hóspede.Sobrenome">
+            <summary>
+            Sobrenome do hóspede
+            </summary>
+        </member>
+        <member name="P:Hóspede.Email">
+            <summary>
+            Email do hóspede
+            </summary>
+        </member>
+        <member name="T:HóspedeFinder">
+            <summary>
+            Classe abstrata para procura de informações do hóspede
+            </summary>
+        </member>
+        <member name="M:HóspedeFinder.ProcurarPeloEmail(System.String)">
+            <summary>
+            Busca hóspede pelo Email
+            </summary>
+            <param name="email">Email do hóspede</param>
+            <returns>Instância do hóspede encontrado, ou null se não encontrado</returns>
+        </member>
+        <member name="T:HóspedeSimpleFinder">
+            <summary>
+            Classe para procurar de informações do hóspede (Simples)
+            </summary>
+        </member>
+        <member name="M:HóspedeSimpleFinder.ProcurarPeloEmail(System.String)">
+            <summary>
+            Busca hóspede pelo Email
+            </summary>
+            <param name="email"></param>
+            <returns>Instância do hóspede encontrado, ou null se não encontrado</returns>
+        </member>
+    </members>
+</doc>

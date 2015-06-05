@@ -1,0 +1,15 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:Usuário id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Statefull/Statefull%2C%20Version%3D0.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<nome id="ref-3">Fabio Galuppo</nome>
+<senha id="ref-4">&#60;SenhaSecreta.752 /&#62;</senha>
+<ativo>true</ativo>
+<datacriação>2002-11-15T10:43:59.7539088-03:00</datacriação>
+<papéis href="#ref-5"/>
+</a1:Usuário>
+<SOAP-ENC:Array id="ref-5" SOAP-ENC:arrayType="xsd:string[2]">
+<item id="ref-6">Administradores</item>
+<item id="ref-7">Desenvolvedores</item>
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

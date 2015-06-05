@@ -1,0 +1,1 @@
+Para visualizar o projeto no Visual Studio.NET, abrir a o arquivo Solucao.sln do diretório Solucao.

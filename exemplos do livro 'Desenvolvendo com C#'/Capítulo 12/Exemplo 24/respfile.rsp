@@ -1,0 +1,2 @@
+# build exe (comentário num arquivo .rsp)
+/target:exe /out:MeasurePerf.exe MatGen.cs MatEsp.cs MesPerf.cs Matemática.cs /nologo
