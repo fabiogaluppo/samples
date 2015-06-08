@@ -350,7 +350,7 @@ namespace CommonLib
                 throw new ArgumentNullException("name");
 
             Name = name;
-            MMF_ = MemoryMappedFile.OpenExisting(name);
+            MMF_ = MemoryMappedFile.OpenExisting(name, MemoryMappedFileRights.ReadWrite);
         }
 
         public string Name { get;  private set; }
