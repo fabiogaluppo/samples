@@ -1,0 +1,220 @@
+------------------------
+iterations = 100, value = 18446744073709551615
+6400
+      4 ms  (GCs=  0) EnumerateSquaresImpl1
+6400
+      6 ms  (GCs=  0) EnumerateSquaresImpl2
+6400
+      4 ms  (GCs=  0) EnumerateSquaresImpl3
+6400
+      1 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000, value = 18446744073709551615
+64000
+      4 ms  (GCs=  2) EnumerateSquaresImpl1
+64000
+      3 ms  (GCs=  0) EnumerateSquaresImpl2
+64000
+      4 ms  (GCs=  1) EnumerateSquaresImpl3
+64000
+      1 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 10000, value = 18446744073709551615
+640000
+     31 ms  (GCs= 27) EnumerateSquaresImpl1
+640000
+     30 ms  (GCs= 11) EnumerateSquaresImpl2
+640000
+     38 ms  (GCs= 10) EnumerateSquaresImpl3
+640000
+     17 ms  (GCs=  6) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100000, value = 18446744073709551615
+6400000
+    300 ms  (GCs=273) EnumerateSquaresImpl1
+6400000
+    268 ms  (GCs= 97) EnumerateSquaresImpl2
+6400000
+    403 ms  (GCs=104) EnumerateSquaresImpl3
+6400000
+    171 ms  (GCs= 61) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000000, value = 18446744073709551615
+64000000
+  3,117 ms  (GCs=2690) EnumerateSquaresImpl1
+64000000
+  2,716 ms  (GCs=934) EnumerateSquaresImpl2
+64000000
+  3,923 ms  (GCs=1000) EnumerateSquaresImpl3
+64000000
+  1,750 ms  (GCs=571) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100, value = 42
+300
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+300
+      0 ms  (GCs=  0) EnumerateSquaresImpl2
+300
+      0 ms  (GCs=  0) EnumerateSquaresImpl3
+300
+      0 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000, value = 42
+3000
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+3000
+      0 ms  (GCs=  0) EnumerateSquaresImpl2
+3000
+      3 ms  (GCs=  0) EnumerateSquaresImpl3
+3000
+      0 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 10000, value = 42
+30000
+      2 ms  (GCs=  1) EnumerateSquaresImpl1
+30000
+      4 ms  (GCs=  1) EnumerateSquaresImpl2
+30000
+     34 ms  (GCs=  5) EnumerateSquaresImpl3
+30000
+      2 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100000, value = 42
+300000
+     16 ms  (GCs= 13) EnumerateSquaresImpl1
+300000
+     39 ms  (GCs= 12) EnumerateSquaresImpl2
+300000
+    323 ms  (GCs= 52) EnumerateSquaresImpl3
+300000
+     25 ms  (GCs=  9) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000000, value = 42
+3000000
+    159 ms  (GCs=126) EnumerateSquaresImpl1
+3000000
+    385 ms  (GCs=116) EnumerateSquaresImpl2
+3000000
+  3,240 ms  (GCs=512) EnumerateSquaresImpl3
+3000000
+    251 ms  (GCs= 83) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100, value = 12297829382473034410
+3200
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+3200
+      0 ms  (GCs=  0) EnumerateSquaresImpl2
+3200
+      0 ms  (GCs=  0) EnumerateSquaresImpl3
+3200
+      0 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000, value = 12297829382473034410
+32000
+      2 ms  (GCs=  1) EnumerateSquaresImpl1
+32000
+      1 ms  (GCs=  0) EnumerateSquaresImpl2
+32000
+      3 ms  (GCs=  0) EnumerateSquaresImpl3
+32000
+      1 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 10000, value = 12297829382473034410
+320000
+     15 ms  (GCs= 14) EnumerateSquaresImpl1
+320000
+     15 ms  (GCs=  6) EnumerateSquaresImpl2
+320000
+     36 ms  (GCs=  8) EnumerateSquaresImpl3
+320000
+     10 ms  (GCs=  4) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100000, value = 12297829382473034410
+3200000
+    154 ms  (GCs=138) EnumerateSquaresImpl1
+3200000
+    152 ms  (GCs= 54) EnumerateSquaresImpl2
+3200000
+    355 ms  (GCs= 78) EnumerateSquaresImpl3
+3200000
+    100 ms  (GCs= 35) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000000, value = 12297829382473034410
+32000000
+  1,589 ms  (GCs=1346) EnumerateSquaresImpl1
+32000000
+  1,491 ms  (GCs=506) EnumerateSquaresImpl2
+32000000
+  3,614 ms  (GCs=749) EnumerateSquaresImpl3
+32000000
+  1,056 ms  (GCs=320) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100, value = 0
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl2
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl3
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000, value = 0
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl2
+0
+      4 ms  (GCs=  0) EnumerateSquaresImpl3
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 10000, value = 0
+0
+      0 ms  (GCs=  0) EnumerateSquaresImpl1
+0
+      3 ms  (GCs=  0) EnumerateSquaresImpl2
+0
+     33 ms  (GCs=  4) EnumerateSquaresImpl3
+0
+      1 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 100000, value = 0
+0
+      4 ms  (GCs=  4) EnumerateSquaresImpl1
+0
+     27 ms  (GCs=  7) EnumerateSquaresImpl2
+0
+    307 ms  (GCs= 48) EnumerateSquaresImpl3
+0
+      4 ms  (GCs=  0) EnumerateSquaresImpl4
+------------------------
+------------------------
+iterations = 1000000, value = 0
+0
+     43 ms  (GCs= 41) EnumerateSquaresImpl1
+0
+    280 ms  (GCs= 72) EnumerateSquaresImpl2
+0
+  3,114 ms  (GCs=480) EnumerateSquaresImpl3
+0
+     38 ms  (GCs=  5) EnumerateSquaresImpl4
+------------------------
