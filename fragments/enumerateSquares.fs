@@ -7,7 +7,7 @@ let enumerateSquares (bits: uint64) =
 	[| for i in 0..63 -> if (bitIsOn i) then (1UL <<< i) else 0UL |]
 	|> Array.filter (fun x -> x > 0UL)
 *)
-//now the suggestion
+//now the suggestion (more info: https://github.com/fabiogaluppo/samples/tree/master/fragments/EnumerateSquares)
 let enumerateSquares (bits: uint64) =
     match bits with
     | 0UL -> [||]
