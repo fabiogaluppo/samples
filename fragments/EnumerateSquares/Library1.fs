@@ -1,4 +1,6 @@
-﻿namespace Lib
+﻿//compile: fsc --optimize+ --target:library /out:bin\Lib.dll Library1.fs
+
+namespace Lib
 
 type Class1() = 
     let rec enumerateSquaresImpl1 bitboard = seq {
