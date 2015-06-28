@@ -1,0 +1,207 @@
+﻿<!--
+
+Sample provided by Fabio Galuppo 
+June 2015 
+
+-->
+
+<html>
+<head>
+    <title>Test with Reactive Extensions and Web Sockets</title>
+    <script src="./header_js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="./header_js/rx_js/rx.lite.js"></script>
+    <script src="./header_js/websocketreactivestream.js"></script>
+    <script type="text/javascript">
+        var noSupportMessage = 'Your browser cannot support WebSocket!';
+        
+        var wsUrl = 'ws://localhost:8084/';
+        var wsrs;
+
+        var subscriber_1;
+        var subscriber_1_filtered;
+
+        function appendMessage(message) {
+            $('body').append(message);
+        }
+
+        function appendMessageToList(message, max, lst, opt, tail, count, total) {
+            var l = opt.length;
+            if (max > 0 && l >= max) {
+                l = 0
+                lst.find('option').remove().end();
+            }
+            
+            lst.append($('<option/>', { value: message, text : message }));
+            
+            if (tail.prop('checked')) 
+                lst.prop('selectedIndex', l);
+            
+            count.html(l + 1);
+            total.html(parseInt(total.html()) + 1);
+        }
+
+        function clearList(lst, count, total) {
+            $(lst).find('option').remove().end();
+            $(count).html(0);
+            $(total).html(0);
+        }
+
+        function clearAllLists() {
+            clearList('#listOfMessages', '#listOfMessagesCount', '#listOfMessagesCountTotal');
+            clearList('#listOfMessages2', '#listOfMessagesCount2', '#listOfMessagesCountTotal2');
+            clearList('#listOfMessages3', '#listOfMessagesCount3', '#listOfMessagesCountTotal3');
+        }
+
+        function stringToFloat(n, decPlaces) {
+            var x = Math.pow(10, decPlaces);
+            return parseFloat(Math.round(n * x) / x).toFixed(decPlaces);
+        }
+
+        function formatMsg (msg) { 
+            return msg.Symbol + ' buy is $' + stringToFloat(msg.Buy, 3) + ' and sell is $' + stringToFloat(msg.Sell, 3); 
+        }
+
+        function formatMsgBuy (msg) { 
+            return msg.Symbol + ' $' + stringToFloat(msg.Buy, 3); 
+        }
+
+        function formatMsgSell (msg) { 
+            return msg.Symbol + ' $' + stringToFloat(msg.Sell, 3); 
+        }
+
+        function connectSocketServer() {           
+            wsrs = new WebSocketReactiveStream(wsUrl, 1, 
+                //onjsonmessage
+                function (msg) {
+                    switch (msg.Tag) {
+                        case 3:
+                            wsrs.subjects[0].onNext(msg);
+                            break;                        
+                        default:
+                            throw 'Unhandled message';
+                    }
+                },
+
+                //onopen
+                function () {
+                    appendMessage('* Connection open<br/>');
+
+                    $('#connectButton').attr('disabled', true);
+                    $('#disconnectButton').attr('disabled', false);
+                    $('#filterButton').attr('disabled', false);
+                    $('#messageInput').attr('disabled', false);
+                    $('#messageInput').prop('value', '');
+
+                    clearAllLists();
+
+                    subscribeAll();
+                },
+
+                //onclose
+                function () {
+                    appendMessage('* Connection closed<br/>');
+                    
+                    $('#connectButton').attr('disabled', false);
+                    $('#disconnectButton').attr('disabled', true);
+                    $('#filterButton').attr('disabled', true);
+                    $('#messageInput').attr('disabled', true);
+
+                    unsubscribeAll();
+                }
+            );
+
+            function subscribeAll() {
+                unsubscribeAll();
+
+                subscriber_1 = wsrs.subjects[0].subscribe(function (msg) {
+                    appendMessageToList(formatMsgBuy(msg), 500, $('#listOfMessages'), $('#listOfMessages option'), $('#listFollowTail'), $('#listOfMessagesCount'), $('#listOfMessagesCountTotal'));
+                    appendMessageToList(formatMsgSell(msg), 500, $('#listOfMessages2'), $('#listOfMessages2 option'), $('#listFollowTail2'), $('#listOfMessagesCount2'), $('#listOfMessagesCountTotal2')); });
+            };
+
+            function unsubscribeAll() {
+                unsubscribe(subscriber_1);
+                unsubscribe(subscriber_1_filtered);
+            }
+        }
+
+        function disconnectWebSocket() {
+            if (wsrs) {
+                wsrs.dispose();
+            }
+        }
+
+        function connectWebSocket() {
+            connectSocketServer();
+        }
+
+        function unsubscribe(sub) {
+            if (sub) {
+                sub.dispose();
+                sub = null;
+            }
+        }
+
+        function filterMessage() {
+            unsubscribe(subscriber_1_filtered);
+
+            var value = $('#messageInput').prop('value');
+            subscriber_1_filtered = wsrs.subjects[0]
+                    .where(function (msg, idx, obs) { return msg.Symbol == value; })
+                    .select(function (msg, idx, obs) { return formatMsg(msg); })                    
+                    .subscribe(function (msg) {
+                        appendMessageToList(msg, 500, $('#listOfMessages3'), $('#listOfMessages3 option'), $('#listFollowTail3'), $('#listOfMessagesCount3'), $('#listOfMessagesCountTotal3'));
+                    });
+        }
+
+        window.onload = function () {
+            $('#disconnectButton').attr('disabled', true);
+            $('#filterButton').attr('disabled', true);
+            $('#messageInput').attr('disabled', true);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="connectButton" value="Connect" onclick="connectWebSocket()" /> 
+    <input type="button" id="disconnectButton" value="Disconnect" onclick="disconnectWebSocket()" />     
+    <br />
+    <table border="1">
+        <tr>
+            <td style="background-color:#7df685; text-align:center; vertical-align:middle;"><label>BUY</label></td>
+            <td style="background-color:#7df685; text-align:center; vertical-align:middle;"><label>SELL</label></td>
+        </tr>
+        <tr>
+            <td>
+                <label id="listOfMessagesCount">0</label>
+                <input type="checkbox" id="listFollowTail" checked>Follow Tail</input>
+                <label id="listOfMessagesCountTotal">0</label>
+                <br />
+                <select id="listOfMessages" size=10 style="width:250;"></select>
+            </td>
+            <td>
+                <label id="listOfMessagesCount2">0</label>
+                <input type="checkbox" id="listFollowTail2" checked>Follow Tail</input>
+                <label id="listOfMessagesCountTotal2">0</label>
+                <br />
+                <select id="listOfMessages2" size=10 style="width:250;"></select>
+            </td>
+        </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+        <tr>
+            <td colspan="2" style="background-color:#fb3838; text-align:center; vertical-align:middle;"><label>FILTERED</label></td>
+        </tr>
+            <td colspan="2">
+                <input type="text" id="messageInput" /> 
+                <input type="button" id="filterButton" value="Filter" onclick="filterMessage()" /> 
+                <br />
+                <label id="listOfMessagesCount3">0</label>
+                <input type="checkbox" id="listFollowTail3" checked>Follow Tail</input>
+                <label id="listOfMessagesCountTotal3">0</label>
+                <br />
+                <select id="listOfMessages3" size=10 style="width:500;"></select>
+            </td>            
+        </tr>
+    </table>    
+    <br />
+</body>
+</html>
