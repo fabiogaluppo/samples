@@ -1,5 +1,5 @@
 //Sample provided by Fabio Galuppo 
-//July 2015
+//August 2015
 
 #ifndef _measure_stats_
 #define _measure_stats_
@@ -69,7 +69,7 @@ void display_estimated_runnning_time(const stats_table& stats, double N, double 
 }
 
 template<class ElapsedPolicy, template <typename> class TestFunctor>
-void do_measure_stats(std::initializer_list<size_t> Ns)
+void do_measurement_and_stats(std::initializer_list<size_t> Ns)
 {
 	TestFunctor<ElapsedPolicy> f;
 	stats_table results = f(Ns);

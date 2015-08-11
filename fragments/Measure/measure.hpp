@@ -1,5 +1,5 @@
 //Sample provided by Fabio Galuppo 
-//July 2015
+//August 2015
 
 #ifndef _measure_
 #define _measure_
@@ -51,7 +51,7 @@ protected:
 #include <iomanip>
 
 template <class ElapsedPolicy>
-std::string do_measure(std::function<void(void)> f, const char* text, double& elapsed)
+std::string do_measurement(std::function<void(void)> f, const char* text, double& elapsed)
 {
 	Elapsed<ElapsedPolicy> e;
 	stop_watch sw;
