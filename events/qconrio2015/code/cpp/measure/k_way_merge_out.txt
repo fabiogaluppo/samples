@@ -1,0 +1,147 @@
+Elapsed time =      73 ms k_way_merge_sort_1 N =  1048576 K =  1 :  1048576.
+Elapsed time =      78 ms k_way_merge_sort_2 N =  1048576 K =  1 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     177 ms k_way_merge_sort_1 N =  2097152 K =  1 :  2097152.
+Elapsed time =     166 ms k_way_merge_sort_2 N =  2097152 K =  1 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     369 ms k_way_merge_sort_1 N =  4194304 K =  1 :  4194304.
+Elapsed time =     351 ms k_way_merge_sort_2 N =  4194304 K =  1 :  4194304.
+----------------------------------------------------------------
+Elapsed time =     749 ms k_way_merge_sort_1 N =  8388608 K =  1 :  8388608.
+Elapsed time =     761 ms k_way_merge_sort_2 N =  8388608 K =  1 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1576 ms k_way_merge_sort_1 N = 16777216 K =  1 : 16777216.
+Elapsed time =    1573 ms k_way_merge_sort_2 N = 16777216 K =  1 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    3316 ms k_way_merge_sort_1 N = 33554432 K =  1 : 33554432.
+Elapsed time =    3313 ms k_way_merge_sort_2 N = 33554432 K =  1 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    6908 ms k_way_merge_sort_1 N = 67108864 K =  1 : 67108864.
+Elapsed time =    6881 ms k_way_merge_sort_2 N = 67108864 K =  1 : 67108864.
+----------------------------------------------------------------
+Elapsed time =      78 ms k_way_merge_sort_1 N =  1048576 K =  2 :  1048576.
+Elapsed time =      75 ms k_way_merge_sort_2 N =  1048576 K =  2 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     180 ms k_way_merge_sort_1 N =  2097152 K =  2 :  2097152.
+Elapsed time =     172 ms k_way_merge_sort_2 N =  2097152 K =  2 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     371 ms k_way_merge_sort_1 N =  4194304 K =  2 :  4194304.
+Elapsed time =     375 ms k_way_merge_sort_2 N =  4194304 K =  2 :  4194304.
+----------------------------------------------------------------
+Elapsed time =     779 ms k_way_merge_sort_1 N =  8388608 K =  2 :  8388608.
+Elapsed time =     772 ms k_way_merge_sort_2 N =  8388608 K =  2 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1624 ms k_way_merge_sort_1 N = 16777216 K =  2 : 16777216.
+Elapsed time =    1620 ms k_way_merge_sort_2 N = 16777216 K =  2 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    3376 ms k_way_merge_sort_1 N = 33554432 K =  2 : 33554432.
+Elapsed time =    3372 ms k_way_merge_sort_2 N = 33554432 K =  2 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    6935 ms k_way_merge_sort_1 N = 67108864 K =  2 : 67108864.
+Elapsed time =    6924 ms k_way_merge_sort_2 N = 67108864 K =  2 : 67108864.
+----------------------------------------------------------------
+Elapsed time =      78 ms k_way_merge_sort_1 N =  1048576 K =  4 :  1048576.
+Elapsed time =      77 ms k_way_merge_sort_2 N =  1048576 K =  4 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     166 ms k_way_merge_sort_1 N =  2097152 K =  4 :  2097152.
+Elapsed time =     176 ms k_way_merge_sort_2 N =  2097152 K =  4 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     355 ms k_way_merge_sort_1 N =  4194304 K =  4 :  4194304.
+Elapsed time =     378 ms k_way_merge_sort_2 N =  4194304 K =  4 :  4194304.
+----------------------------------------------------------------
+Elapsed time =     768 ms k_way_merge_sort_1 N =  8388608 K =  4 :  8388608.
+Elapsed time =     779 ms k_way_merge_sort_2 N =  8388608 K =  4 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1589 ms k_way_merge_sort_1 N = 16777216 K =  4 : 16777216.
+Elapsed time =    1609 ms k_way_merge_sort_2 N = 16777216 K =  4 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    3319 ms k_way_merge_sort_1 N = 33554432 K =  4 : 33554432.
+Elapsed time =    3352 ms k_way_merge_sort_2 N = 33554432 K =  4 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    7009 ms k_way_merge_sort_1 N = 67108864 K =  4 : 67108864.
+Elapsed time =    6971 ms k_way_merge_sort_2 N = 67108864 K =  4 : 67108864.
+----------------------------------------------------------------
+Elapsed time =      93 ms k_way_merge_sort_1 N =  1048576 K =  8 :  1048576.
+Elapsed time =      78 ms k_way_merge_sort_2 N =  1048576 K =  8 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     171 ms k_way_merge_sort_1 N =  2097152 K =  8 :  2097152.
+Elapsed time =     176 ms k_way_merge_sort_2 N =  2097152 K =  8 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     369 ms k_way_merge_sort_1 N =  4194304 K =  8 :  4194304.
+Elapsed time =     374 ms k_way_merge_sort_2 N =  4194304 K =  8 :  4194304.
+----------------------------------------------------------------
+Elapsed time =     790 ms k_way_merge_sort_1 N =  8388608 K =  8 :  8388608.
+Elapsed time =     756 ms k_way_merge_sort_2 N =  8388608 K =  8 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1624 ms k_way_merge_sort_1 N = 16777216 K =  8 : 16777216.
+Elapsed time =    1686 ms k_way_merge_sort_2 N = 16777216 K =  8 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    3391 ms k_way_merge_sort_1 N = 33554432 K =  8 : 33554432.
+Elapsed time =    3374 ms k_way_merge_sort_2 N = 33554432 K =  8 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    7146 ms k_way_merge_sort_1 N = 67108864 K =  8 : 67108864.
+Elapsed time =    7137 ms k_way_merge_sort_2 N = 67108864 K =  8 : 67108864.
+----------------------------------------------------------------
+Elapsed time =      90 ms k_way_merge_sort_1 N =  1048576 K = 16 :  1048576.
+Elapsed time =      75 ms k_way_merge_sort_2 N =  1048576 K = 16 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     176 ms k_way_merge_sort_1 N =  2097152 K = 16 :  2097152.
+Elapsed time =     166 ms k_way_merge_sort_2 N =  2097152 K = 16 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     406 ms k_way_merge_sort_1 N =  4194304 K = 16 :  4194304.
+Elapsed time =     343 ms k_way_merge_sort_2 N =  4194304 K = 16 :  4194304.
+----------------------------------------------------------------
+Elapsed time =     833 ms k_way_merge_sort_1 N =  8388608 K = 16 :  8388608.
+Elapsed time =     750 ms k_way_merge_sort_2 N =  8388608 K = 16 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1770 ms k_way_merge_sort_1 N = 16777216 K = 16 : 16777216.
+Elapsed time =    1713 ms k_way_merge_sort_2 N = 16777216 K = 16 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    3565 ms k_way_merge_sort_1 N = 33554432 K = 16 : 33554432.
+Elapsed time =    3203 ms k_way_merge_sort_2 N = 33554432 K = 16 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    7395 ms k_way_merge_sort_1 N = 67108864 K = 16 : 67108864.
+Elapsed time =    6713 ms k_way_merge_sort_2 N = 67108864 K = 16 : 67108864.
+----------------------------------------------------------------
+Elapsed time =     108 ms k_way_merge_sort_1 N =  1048576 K = 32 :  1048576.
+Elapsed time =      73 ms k_way_merge_sort_2 N =  1048576 K = 32 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     212 ms k_way_merge_sort_1 N =  2097152 K = 32 :  2097152.
+Elapsed time =     147 ms k_way_merge_sort_2 N =  2097152 K = 32 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     432 ms k_way_merge_sort_1 N =  4194304 K = 32 :  4194304.
+Elapsed time =     332 ms k_way_merge_sort_2 N =  4194304 K = 32 :  4194304.
+----------------------------------------------------------------
+Elapsed time =    1006 ms k_way_merge_sort_1 N =  8388608 K = 32 :  8388608.
+Elapsed time =     725 ms k_way_merge_sort_2 N =  8388608 K = 32 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    1926 ms k_way_merge_sort_1 N = 16777216 K = 32 : 16777216.
+Elapsed time =    1484 ms k_way_merge_sort_2 N = 16777216 K = 32 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    4081 ms k_way_merge_sort_1 N = 33554432 K = 32 : 33554432.
+Elapsed time =    3093 ms k_way_merge_sort_2 N = 33554432 K = 32 : 33554432.
+----------------------------------------------------------------
+Elapsed time =    8291 ms k_way_merge_sort_1 N = 67108864 K = 32 : 67108864.
+Elapsed time =    6441 ms k_way_merge_sort_2 N = 67108864 K = 32 : 67108864.
+----------------------------------------------------------------
+Elapsed time =     126 ms k_way_merge_sort_1 N =  1048576 K = 64 :  1048576.
+Elapsed time =      62 ms k_way_merge_sort_2 N =  1048576 K = 64 :  1048576.
+----------------------------------------------------------------
+Elapsed time =     287 ms k_way_merge_sort_1 N =  2097152 K = 64 :  2097152.
+Elapsed time =     148 ms k_way_merge_sort_2 N =  2097152 K = 64 :  2097152.
+----------------------------------------------------------------
+Elapsed time =     577 ms k_way_merge_sort_1 N =  4194304 K = 64 :  4194304.
+Elapsed time =     317 ms k_way_merge_sort_2 N =  4194304 K = 64 :  4194304.
+----------------------------------------------------------------
+Elapsed time =    1240 ms k_way_merge_sort_1 N =  8388608 K = 64 :  8388608.
+Elapsed time =     657 ms k_way_merge_sort_2 N =  8388608 K = 64 :  8388608.
+----------------------------------------------------------------
+Elapsed time =    2495 ms k_way_merge_sort_1 N = 16777216 K = 64 : 16777216.
+Elapsed time =    1375 ms k_way_merge_sort_2 N = 16777216 K = 64 : 16777216.
+----------------------------------------------------------------
+Elapsed time =    5096 ms k_way_merge_sort_1 N = 33554432 K = 64 : 33554432.
+Elapsed time =    3044 ms k_way_merge_sort_2 N = 33554432 K = 64 : 33554432.
+----------------------------------------------------------------
+Elapsed time =   10677 ms k_way_merge_sort_1 N = 67108864 K = 64 : 67108864.
+Elapsed time =    6109 ms k_way_merge_sort_2 N = 67108864 K = 64 : 67108864.
+----------------------------------------------------------------

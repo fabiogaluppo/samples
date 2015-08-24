@@ -1,0 +1,6 @@
+Count   =      6
+Total   =   7578 ms
+Average =   1263 ms
+Std Dev =   1899 ms
+Min     =    512 ms
+Max     =   4046 ms

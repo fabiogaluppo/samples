@@ -1,0 +1,25 @@
+Elapsed time:       0 ms max_element algorithm N:  1048576 result:  1048576.
+Elapsed time:       0 ms max_element algorithm N:  2097152 result:  2097152.
+Elapsed time:      15 ms max_element algorithm N:  4194304 result:  4194304.
+Elapsed time:      15 ms max_element algorithm N:  8388608 result:  8388608.
+Elapsed time:      42 ms max_element algorithm N: 16777216 result: 16777216.
+Elapsed time:      86 ms max_element algorithm N: 33554432 result: 33554432.
+Elapsed time:     162 ms max_element algorithm N: 67108864 result: 67108864.
+
+         N               T     log N     log T     ratio log ratio
+   1048576          0.0000        20   -1.#INF   -1.#INF   -1.#INF
+   2097152          0.0000        21   -1.#INF   -1.#IND   -1.#IND
+   4194304         15.0000        22    3.9069    1.#INF    1.#INF
+   8388608         15.0000        23    3.9069    1.0000    0.0000
+  16777216         42.0000        24    5.3923    2.8000    1.4854
+  33554432         86.0000        25    6.4263    2.0476    1.0339
+  67108864        162.0000        26    7.3399    1.8837    0.9136
+
+Elapsed time:     165 ms max_element algorithm N: 67108864 result: 67108864.
+Elapsed time:     168 ms max_element algorithm N: 67108864 result: 67108864.
+Elapsed time:     165 ms max_element algorithm N: 67108864 result: 67108864.
+Elapsed time:     167 ms max_element algorithm N: 67108864 result: 67108864.
+Elapsed time:     165 ms max_element algorithm N: 67108864 result: 67108864.
+
+Estimated runnning time is 1.1740e-005 x N^0.9136 ms
+

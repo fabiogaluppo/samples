@@ -1,0 +1,60 @@
+N:
+N =     16 count =         16
+N =     32 count =         32
+N =     64 count =         64
+N =    128 count =        128
+N =    256 count =        256
+N =    512 count =        512
+N =   1024 count =       1024
+N =   2048 count =       2048
+
+N^2:
+N =     16 count =        256
+N =     32 count =       1024
+N =     64 count =       4096
+N =    128 count =      16384
+N =    256 count =      65536
+N =    512 count =     262144
+N =   1024 count =    1048576
+N =   2048 count =    4194304
+
+N -> ~2 N:
+N =     16 count =         32
+N =     32 count =         64
+N =     64 count =        128
+N =    128 count =        256
+N =    256 count =        512
+N =    512 count =       1024
+N =   1024 count =       2048
+N =   2048 count =       4096
+
+N:
+N =     16 count =         16
+N =     32 count =         32
+N =     64 count =         64
+N =    128 count =        128
+N =    256 count =        256
+N =    512 count =        512
+N =   1024 count =       1024
+N =   2048 count =       2048
+
+N lg N -> ~1.203125 N lg N:
+N =     16 count =         77 [N lg N =         64]
+N =     32 count =        182 [N lg N =        160]
+N =     64 count =        423 [N lg N =        384]
+N =    128 count =        968 [N lg N =        896]
+N =    256 count =       2185 [N lg N =       2048]
+N =    512 count =       4874 [N lg N =       4608]
+N =   1024 count =      10763 [N lg N =      10240]
+N =   2048 count =      23564 [N lg N =      22528]
+
+N -> ~2 N:
+N =     16 count =         32 [2 N =         32]
+N =     32 count =         64 [2 N =         64]
+N =     64 count =        128 [2 N =        128]
+N =    128 count =        256 [2 N =        256]
+N =    256 count =        512 [2 N =        512]
+N =    512 count =       1024 [2 N =       1024]
+N =   1024 count =       2048 [2 N =       2048]
+N =   2048 count =       4096 [2 N =       4096]
+
