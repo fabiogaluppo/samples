@@ -295,7 +295,7 @@ class Program
         MinPQ<int> highValues = PQ<int>.CreateMinPQ();
 
         int y = 0;
-        foreach (var x in xs) //lg(N!) + 4/3 N lg N
+        foreach (var x in xs) //lg(N!) + 4/3 lg (N!) == 7/3 lg (N!)
         {
             if (lowValues.Size > 0) //lg(N!)
             {
@@ -314,7 +314,7 @@ class Program
             }
 
             //TODO: Not a simple analysis, depends on order of data in xs
-            //Draft: Suppose 1/3 per branch and 2 lg N Push and Extract, the expected value would be 4/3 N lg N
+            //Draft: Suppose 1/3 per branch and 2 lg N Push and Extract, the expected value would be 4/3 lg (N!)
             if (lowValues.Size > highValues.Size + 1)
             {
                 highValues.Push(ExtractMax(lowValues)); //2 lg N (Push + Extract)
