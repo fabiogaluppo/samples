@@ -1,0 +1,36 @@
+Max profit is $20
+Max profit is $47
+Max profit is $48
+Max profit is $49
+Max profit is $0
+Max profit is $0
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $3
+Max profit is $3
+Max profit is $3
+Max profit is $4
+Max profit is $4
+Max profit is $4
+Max profit is $3
+Max profit is $2
+Max profit is $2
+Max profit is $3
+Max profit is $3
+Max profit is $3
+Max profit is $2
+Max profit is $2
+Max profit is $0
+
+474747474747474747474747474747474747474747474747474747474747
+
+Brute force =   29 ticks - result = 47
+LINQ        =  315 ticks - result = 47
+Linear      =    1 ticks - result = 47
