@@ -1,0 +1,8 @@
+/Users/fabiogaluppo/zmq/samples/sample-2/bin/Debug/netcoreapp1.1/sample-2.deps.json
+/Users/fabiogaluppo/zmq/samples/sample-2/bin/Debug/netcoreapp1.1/sample-2.runtimeconfig.json
+/Users/fabiogaluppo/zmq/samples/sample-2/bin/Debug/netcoreapp1.1/sample-2.runtimeconfig.dev.json
+/Users/fabiogaluppo/zmq/samples/sample-2/bin/Debug/netcoreapp1.1/sample-2.dll
+/Users/fabiogaluppo/zmq/samples/sample-2/bin/Debug/netcoreapp1.1/sample-2.pdb
+/Users/fabiogaluppo/zmq/samples/sample-2/obj/Debug/netcoreapp1.1/sample-2.AssemblyInfo.cs
+/Users/fabiogaluppo/zmq/samples/sample-2/obj/Debug/netcoreapp1.1/sample-2.dll
+/Users/fabiogaluppo/zmq/samples/sample-2/obj/Debug/netcoreapp1.1/sample-2.pdb
