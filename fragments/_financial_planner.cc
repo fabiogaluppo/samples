@@ -15,7 +15,7 @@ $(BIN_DIR)/_financial_planner$E: $(OR_TOOLS_LIBS) $(CVRPTW_LIBS) $(DIMACS_LIBS) 
 //run sample:
 //make rcc EX=_financial_planner.cc
 
-//Output:
+//output:
 /*
 	maximize:
 		0.0865x1 + 0.095x2 + 0.1x3 + 0.0875x4 + 0.0925x5 + 0.09x6
@@ -116,8 +116,6 @@ namespace operations_research {
 	  printf("\tx1, x2, x3, x4, x5, x6 >= 0");
 
 	  //solve
-	  //printf("\nnumber of variables = %d", solver.NumVariables());
-	  //printf("\nnumber of constraints = %d", solver.NumConstraints());
 	  solver.Solve();
 
 	  //solution
