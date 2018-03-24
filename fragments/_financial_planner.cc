@@ -1,3 +1,6 @@
+//Sample provided by Fabio Galuppo
+//March 2018
+
 //Makefile.user:
 /*
 $(OBJ_DIR)$S_financial_planner.$O: $(EX) $(CVRPTW_DEPS) $(DIMACS_DEPS) $(FAP_DEPS)
