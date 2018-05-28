@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Compile Include="..\ZeroMQ.cs" />
+	<Compile Include="..\ZeroMQPINVOKE.cs" />
+	<Compile Include="..\SWIGTYPE_p_void.cs" />
+	<Compile Include="..\PinnedBuffer.cs" />
+	<Compile Include="..\Utils.cs" />
+  </ItemGroup>
+
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+  <Copy SourceFiles="..\ZeroMQ.dll" DestinationFolder="$(OutDir)" />
+  <Copy SourceFiles="..\..\zmq\libzmq.dll" DestinationFolder="$(OutDir)" />
+  </Target>
+
+  <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+  <Copy SourceFiles="..\ZeroMQ.dll" DestinationFolder="$(PublishDir)" />
+  <Copy SourceFiles="..\..\zmq\libzmq.dll" DestinationFolder="$(PublishDir)" />  
+  </Target>
+
+</Project>

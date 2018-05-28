@@ -1,0 +1,18 @@
+
+C:\Users\Fabio Galuppo\ZmqRxCSharp\sample4>swig -csharp zmq.i
+
+C:\Users\Fabio Galuppo\ZmqRxCSharp\sample4>cl /LD zmq_wrap.c /I ..\zmq /link ..\zmq\libzmq.lib /OUT:.\ZeroMQ.dll
+Microsoft (R) C/C++ Optimizing Compiler Version 19.10.25019 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+zmq_wrap.c
+Microsoft (R) Incremental Linker Version 14.10.25019.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:zmq_wrap.dll
+/dll
+/implib:zmq_wrap.lib
+..\zmq\libzmq.lib
+/OUT:.\ZeroMQ.dll
+zmq_wrap.obj
+   Creating library zmq_wrap.lib and object zmq_wrap.exp
