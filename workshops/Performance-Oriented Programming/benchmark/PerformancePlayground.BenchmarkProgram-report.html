@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>PerformancePlayground.BenchmarkProgram-20211121-164954</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19043.1348 (21H1/May2021Update)
+Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
+.NET SDK=5.0.403
+  [Host]     : .NET 5.0.12 (5.0.1221.52207), X64 RyuJIT
+  DefaultJob : .NET 5.0.12 (5.0.1221.52207), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>N</th><th>   Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>FizzBuzz1</td><td>100</td><td>4.467 &mu;s</td><td>0.0329 &mu;s</td><td>0.0292 &mu;s</td><td>0.8163</td><td>-</td><td>-</td><td>5,168 B</td>
+</tr><tr><td>FizzBuzz2</td><td>100</td><td>1.069 &mu;s</td><td>0.0043 &mu;s</td><td>0.0038 &mu;s</td><td>0.0916</td><td>-</td><td>-</td><td>584 B</td>
+</tr><tr><td>FizzBuzz3</td><td>100</td><td>3.198 &mu;s</td><td>0.0263 &mu;s</td><td>0.0246 &mu;s</td><td>0.2213</td><td>-</td><td>-</td><td>1,404 B</td>
+</tr><tr><td>FizzBuzz4</td><td>100</td><td>3.539 &mu;s</td><td>0.0664 &mu;s</td><td>0.0887 &mu;s</td><td>0.2289</td><td>-</td><td>-</td><td>1,452 B</td>
+</tr><tr><td>FizzBuzz1</td><td>1000</td><td>49.539 &mu;s</td><td>0.2376 &mu;s</td><td>0.2222 &mu;s</td><td>5.4321</td><td>0.1831</td><td>-</td><td>34,352 B</td>
+</tr><tr><td>FizzBuzz2</td><td>1000</td><td>16.107 &mu;s</td><td>0.0683 &mu;s</td><td>0.0639 &mu;s</td><td>0.6409</td><td>-</td><td>-</td><td>4,184 B</td>
+</tr><tr><td>FizzBuzz3</td><td>1000</td><td>24.468 &mu;s</td><td>0.0582 &mu;s</td><td>0.0544 &mu;s</td><td>0.7935</td><td>-</td><td>-</td><td>5,032 B</td>
+</tr><tr><td>FizzBuzz4</td><td>1000</td><td>20.331 &mu;s</td><td>0.1367 &mu;s</td><td>0.1212 &mu;s</td><td>0.7935</td><td>-</td><td>-</td><td>5,072 B</td>
+</tr><tr><td>FizzBuzz1</td><td>10000</td><td>668.299 &mu;s</td><td>3.8054 &mu;s</td><td>3.5596 &mu;s</td><td>44.9219</td><td>10.7422</td><td>-</td><td>286,160 B</td>
+</tr><tr><td>FizzBuzz2</td><td>10000</td><td>331.035 &mu;s</td><td>0.8199 &mu;s</td><td>0.7669 &mu;s</td><td>6.3477</td><td>-</td><td>-</td><td>40,184 B</td>
+</tr><tr><td>FizzBuzz3</td><td>10000</td><td>233.225 &mu;s</td><td>2.4275 &mu;s</td><td>2.2706 &mu;s</td><td>6.3477</td><td>0.7324</td><td>-</td><td>41,032 B</td>
+</tr><tr><td>FizzBuzz4</td><td>10000</td><td>235.263 &mu;s</td><td>0.9985 &mu;s</td><td>0.7796 &mu;s</td><td>6.3477</td><td>-</td><td>-</td><td>41,080 B</td>
+</tr><tr><td>FizzBuzz1</td><td>100000</td><td>8,071.687 &mu;s</td><td>36.7460 &mu;s</td><td>32.5744 &mu;s</td><td>593.7500</td><td>500.0000</td><td>500.0000</td><td>2,589,133 B</td>
+</tr><tr><td>FizzBuzz2</td><td>100000</td><td>3,935.621 &mu;s</td><td>57.9613 &mu;s</td><td>54.2170 &mu;s</td><td>121.0938</td><td>121.0938</td><td>121.0938</td><td>400,184 B</td>
+</tr><tr><td>FizzBuzz3</td><td>100000</td><td>2,577.898 &mu;s</td><td>2.1046 &mu;s</td><td>1.9686 &mu;s</td><td>121.0938</td><td>121.0938</td><td>121.0938</td><td>401,032 B</td>
+</tr><tr><td>FizzBuzz4</td><td>100000</td><td>2,648.578 &mu;s</td><td>4.8734 &mu;s</td><td>4.3202 &mu;s</td><td>121.0938</td><td>121.0938</td><td>121.0938</td><td>401,080 B</td>
+</tr><tr><td>FizzBuzz1</td><td>1000000</td><td>96,758.236 &mu;s</td><td>989.5990 &mu;s</td><td>877.2538 &mu;s</td><td>1666.6667</td><td>1666.6667</td><td>1666.6667</td><td>31,734,007 B</td>
+</tr><tr><td>FizzBuzz2</td><td>1000000</td><td>45,428.274 &mu;s</td><td>172.2986 &mu;s</td><td>161.1682 &mu;s</td><td>909.0909</td><td>909.0909</td><td>909.0909</td><td>4,000,184 B</td>
+</tr><tr><td>FizzBuzz3</td><td>1000000</td><td>28,883.489 &mu;s</td><td>44.5498 &mu;s</td><td>41.6720 &mu;s</td><td>968.7500</td><td>968.7500</td><td>968.7500</td><td>4,001,032 B</td>
+</tr><tr><td>FizzBuzz4</td><td>1000000</td><td>29,092.095 &mu;s</td><td>68.3559 &mu;s</td><td>63.9402 &mu;s</td><td>968.7500</td><td>968.7500</td><td>968.7500</td><td>4,001,080 B</td>
+</tr></tbody></table>
+</body>
+</html>
